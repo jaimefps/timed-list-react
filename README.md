@@ -1,9 +1,13 @@
 # Experiment with react hooks and smooth UX
 
-Entertained with my useTimedCount hook, I've done other experiments building small things with it. In this case I wanted to create a component with the following interface.
+Entertained with my useTimedCount hook, I've done other experiments building small things with it. In this case I wanted to create a component with the following interface, where you cna easily control the speed of the different transitions via the `timeout` props.
 
 ```
-<TimedList timeout={number}>
+<TimedList
+  timeout={number}
+  fadeProps={{ timeout: number }}
+  slideProps={{ timeout: number }}
+>
  <Item/>
  <Item/>
  <Item/>
@@ -32,10 +36,12 @@ function useTimedCount(max: number, interval?: number) {
 
 ## Examples
 
+NOTE: Gif videos look much slower than the actual animation.
+
 With MaterialUI Fade:
 
-![alt-text](with-fade.gif)
+<img src="with-fade.gif" width="300" height="300"/>
 
 With MaterialUI Slide:
 
-![alt-text](with-slide.gif)
+<img src="with-slide.gif" width="300" height="300"/>
